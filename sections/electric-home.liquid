@@ -1,0 +1,321 @@
+{% assign product_handle = 'electric-nail-cutter' %}
+{% assign product_url = routes.root_url | append: '/products/' | append: product_handle %}
+
+<div class="top-bar">
+  <span>Free express shipping on bundles &nbsp;&bull;&nbsp; 30-day risk-free trial</span>
+  <a href="#faq">Need help? Start here</a>
+</div>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav__logo">
+    <span class="nav__logo-bubble">GT</span>
+    GleamTrim
+  </div>
+  <ul class="nav__links" role="list">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#demo">Demo</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav__icons">
+    <span class="nav__pill">Ships in 24h</span>
+    <a class="nav__cta" href="{{ product_url }}">Shop now &rarr;</a>
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="container hero__container">
+    <div class="hero__content" data-animate="fade-up">
+      <span class="hero__eyebrow">Electric Nail Cutter</span>
+      <h1 class="hero__headline">Salon-grade nails without ever leaving home.</h1>
+      <p class="hero__subheading">
+        Trim, smooth, and shine in seconds with the only electric nail cutter engineered for effortless self-care.
+        Whisper-quiet power meets precision ceramic blades for a fearless finish every time.
+      </p>
+      <div class="hero__chip">New placeholder assets ready for upload</div>
+      <ul class="hero__benefits" role="list">
+        <li>360° protective guard keeps skin and cuticles safe.</li>
+        <li>Dual-speed motor for pedi and mani perfection.</li>
+        <li>USB-C recharge with 60 minutes of cordless use.</li>
+      </ul>
+      <div class="hero__cta">
+        <a class="button button--primary" href="{{ product_url }}">Shop Electric Nail Cutter</a>
+        <a class="button button--ghost" href="#features">See Why It Works</a>
+      </div>
+      <div class="hero__trust">
+        <div>30-Day Money-Back</div>
+        <div>2-Year Warranty</div>
+        <div>Free US Shipping $50+</div>
+      </div>
+    </div>
+    <div class="hero__visual" aria-hidden="true">
+      <div class="hero__badge">Best Seller</div>
+      <div class="hero__device"></div>
+      <div class="hero__card hero__card--one">
+        <strong>QuietForce™ Motor</strong>
+        <span>38 dB comforting hum</span>
+      </div>
+      <div class="hero__card hero__card--two">
+        <strong>SkinSense™ Guard</strong>
+        <span>Auto pause on skin</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="category-cards" aria-label="Featured use cases">
+  <div class="container category-cards__grid">
+    <article class="category-card" data-animate="fade-up">
+      <span class="category-card__tag">Starter kit</span>
+      <h3 class="category-card__title">At-home manicure</h3>
+      <div class="category-card__placeholder" aria-hidden="true"></div>
+      <a class="button button--ghost" href="{{ product_url }}">View bundle</a>
+    </article>
+    <article class="category-card" data-animate="fade-up">
+      <span class="category-card__tag">Kids safe</span>
+      <h3 class="category-card__title">Little hands kit</h3>
+      <div class="category-card__placeholder" aria-hidden="true"></div>
+      <a class="button button--ghost" href="{{ product_url }}">See what&apos;s inside</a>
+    </article>
+    <article class="category-card" data-animate="fade-up">
+      <span class="category-card__tag">Pro polish</span>
+      <h3 class="category-card__title">Salon upgrade set</h3>
+      <div class="category-card__placeholder" aria-hidden="true"></div>
+      <a class="button button--ghost" href="{{ product_url }}">Shop pro tools</a>
+    </article>
+    <article class="category-card" data-animate="fade-up">
+      <span class="category-card__tag">Glow routine</span>
+      <h3 class="category-card__title">Nightly wind-down</h3>
+      <div class="category-card__placeholder" aria-hidden="true"></div>
+      <a class="button button--ghost" href="{{ product_url }}">Build your set</a>
+    </article>
+  </div>
+</section>
+
+<section class="metrics" aria-label="Product highlights">
+  <div class="container metrics__strip">
+    <div class="metrics__item">
+      <strong>40k+</strong>
+      <span>Happy customers</span>
+    </div>
+    <div class="metrics__item">
+      <strong>4.9★</strong>
+      <span>Average rating</span>
+    </div>
+    <div class="metrics__item">
+      <strong>60 min</strong>
+      <span>Cordless use time</span>
+    </div>
+    <div class="metrics__item">
+      <strong>0 nicks</strong>
+      <span>SkinSense™ protection</span>
+    </div>
+  </div>
+</section>
+
+<section class="brand-strip" aria-label="Retailers and press logos">
+  <div class="container brand-strip__container">
+    <span>Featured by</span>
+    <ul role="list">
+      <li>GlowDaily</li>
+      <li>Tech Refinery</li>
+      <li>SelfCare Lab</li>
+      <li>Nail Pro Digest</li>
+    </ul>
+  </div>
+</section>
+
+<section class="split" id="demo">
+  <div class="container split__container">
+    <div class="split__media" data-animate="fade-up">
+      <div class="split__placeholder">Drop demo video still here</div>
+      <div class="split__badge">Real-time smoothing in under 10 seconds</div>
+    </div>
+    <div class="split__content" data-animate="fade-up">
+      <h2>Meet the only cutter with SkinSense™ technology.</h2>
+      <p>
+        Pressure-responsive sensors automatically pause the ceramic micro-blades when skin contact is detected.
+        That means confident grooming for restless kids, aging hands, and anyone who hates traditional clippers.
+      </p>
+      <ul role="list">
+        <li>Micro-grit finishing disc polishes without splitting.</li>
+        <li>Magnetic catch traps nail dust for zero mess clean-up.</li>
+        <li>Charging cradle doubles as an LED spotlight for perfect visibility.</li>
+      </ul>
+      <a class="link" href="{{ product_url }}">Explore full specs</a>
+    </div>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">Why customers switch</span>
+      <h2>Everything you need for pro finishes at home.</h2>
+      <p>
+        Designed with dermatologists and nail artists, the Electric Nail Cutter replaces a drawer full of tools with a single, intuitive device.
+      </p>
+    </header>
+    <div class="features__grid">
+      <article class="feature-card" data-animate="fade-up">
+        <h3>Ergonomic halo grip</h3>
+        <p>360° ring grip keeps hands relaxed while the tapered body balances any angle for left or right-handed users.</p>
+      </article>
+      <article class="feature-card" data-animate="fade-up">
+        <h3>Three interchangeable heads</h3>
+        <p>Shape, smooth, and shine with color-coded heads that snap on magnetically and rinse clean under water.</p>
+      </article>
+      <article class="feature-card" data-animate="fade-up">
+        <h3>Precision LED guide</h3>
+        <p>Integrated glow light reveals edges and micro-frays—ideal for low-light touch ups or on-the-go travel kits.</p>
+      </article>
+      <article class="feature-card" data-animate="fade-up">
+        <h3>Fast USB-C charging</h3>
+        <p>Grab 10 minutes of use from a 5-minute quick charge or enjoy a full hour when fully topped up.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="comparison" id="comparison">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">The upgrade</span>
+      <h2>See how Electric Nail Cutter stacks up.</h2>
+    </header>
+    <div class="comparison__table" role="table" data-animate="fade-up">
+      <div class="comparison__row comparison__row--head" role="row">
+        <div role="columnheader">Feature</div>
+        <div role="columnheader">Electric Nail Cutter</div>
+        <div role="columnheader">Traditional Clippers</div>
+      </div>
+      <div class="comparison__row" role="row">
+        <div role="cell">Safety sensor</div>
+        <div role="cell">SkinSense™ auto-stop</div>
+        <div role="cell">None &mdash; risk of nicks</div>
+      </div>
+      <div class="comparison__row" role="row">
+        <div role="cell">Finish quality</div>
+        <div role="cell">Glass-smooth edge in seconds</div>
+        <div role="cell">Jagged edges, requires filing</div>
+      </div>
+      <div class="comparison__row" role="row">
+        <div role="cell">Noise level</div>
+        <div role="cell">38 dB whisper quiet</div>
+        <div role="cell">69 dB clipping snap</div>
+      </div>
+      <div class="comparison__row" role="row">
+        <div role="cell">Clean-up</div>
+        <div role="cell">Built-in dust capture</div>
+        <div role="cell">Messy clipping scatter</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="how-it-works">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">How it works</span>
+      <h2>Three simple steps to salon-level nails.</h2>
+    </header>
+    <ol class="steps__list" data-animate="fade-up">
+      <li>
+        <span>1</span>
+        <h3>Prep &amp; power</h3>
+        <p>Choose your head, press once for standard speed or twice for pedi power.</p>
+      </li>
+      <li>
+        <span>2</span>
+        <h3>Shape safely</h3>
+        <p>Glide across the nail edge. The guard keeps skin protected while the LED reveals detail.</p>
+      </li>
+      <li>
+        <span>3</span>
+        <h3>Polish &amp; store</h3>
+        <p>Switch to the smooth head for a glossy finish, then dock it in the cradle to recharge.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<section class="social-proof" id="reviews">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">Rave reviews</span>
+      <h2>Loved by 40,000+ meticulous hands.</h2>
+    </header>
+    <div class="reviews">
+      <article class="review" data-animate="fade-up">
+        <div class="review__rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>&ldquo;I bought it for my toddler&apos;s nails, but now the whole family uses it. Zero tears, zero scratches.&rdquo;</p>
+        <span class="review__author">&mdash; Priya M.</span>
+      </article>
+      <article class="review" data-animate="fade-up">
+        <div class="review__rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>&ldquo;I run a home salon and this replaced three tools. Clean edges and my clients notice the difference.&rdquo;</p>
+        <span class="review__author">&mdash; Tasha R.</span>
+      </article>
+      <article class="review" data-animate="fade-up">
+        <div class="review__rating" aria-label="5 out of 5 stars">★★★★★</div>
+        <p>&ldquo;The safety stop actually works. I tried to make it slip and it just pauses. Huge relief for my dad&apos;s shaky hands.&rdquo;</p>
+        <span class="review__author">&mdash; Jordan L.</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="guarantee" id="guarantee">
+  <div class="container guarantee__container" data-animate="fade-up">
+    <div class="guarantee__content">
+      <h2>Risk-free glow up.</h2>
+      <p>Try the Electric Nail Cutter for 30 days. If you don&apos;t feel the difference, send it back for a full refund. No restocking fees, no frustration.</p>
+      <ul role="list">
+        <li>Two-year warranty</li>
+        <li>Lifetime support team</li>
+        <li>Easy returns portal</li>
+      </ul>
+    </div>
+    <div class="guarantee__cta">
+      <a class="button button--primary" href="{{ product_url }}">Claim your kit</a>
+      <span class="guarantee__note">Ships next business day</span>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">Questions</span>
+      <h2>FAQ</h2>
+    </header>
+    <div class="faq__list" data-animate="fade-up">
+      <details open>
+        <summary>Is it safe for kids or seniors?</summary>
+        <p>Yes. SkinSense™ pauses the head the moment it detects skin. The rounded guard prevents direct blade contact, making it ideal for delicate or unsteady hands.</p>
+      </details>
+      <details>
+        <summary>How do I clean the cutter?</summary>
+        <p>Pop off the magnetic head, rinse under warm water, and wipe the dust chamber. The cradle includes a brush for quick clean-ups between uses.</p>
+      </details>
+      <details>
+        <summary>What&apos;s included in the box?</summary>
+        <p>Electric Nail Cutter handset, charging cradle with USB-C cable, three interchangeable heads, dust brush, travel pouch, and quick-start guide.</p>
+      </details>
+      <details>
+        <summary>How long does shipping take?</summary>
+        <p>Orders ship within 24 hours. US customers receive their kit in 3-5 business days; international delivery averages 7-10 days.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="cta">
+  <div class="container final-cta__container" data-animate="fade-up">
+    <div>
+      <h2>Ready for the easiest manicure ever?</h2>
+      <p>Join thousands who trimmed their routine down to under five minutes.</p>
+    </div>
+    <a class="button button--primary" href="{{ product_url }}">Add to cart</a>
+  </div>
+</section>
