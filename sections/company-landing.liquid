@@ -1,0 +1,671 @@
+{% assign product_handle = section.settings.product_handle | default: 'electric-nail-cutter' %}
+{% assign product_url = routes.root_url | append: '/products/' | append: product_handle %}
+
+<div class="top-bar">
+  <span>{{ section.settings.top_bar_text }}</span>
+  {% if section.settings.top_bar_link_text != blank %}
+    <a href="{{ section.settings.top_bar_link_url }}">{{ section.settings.top_bar_link_text }}</a>
+  {% endif %}
+</div>
+
+<nav class="nav" aria-label="Primary">
+  <div class="nav__logo">
+    {% if section.settings.logo_badge != blank %}
+      <span class="nav__logo-bubble">{{ section.settings.logo_badge }}</span>
+    {% endif %}
+    {{ section.settings.brand_name }}
+  </div>
+
+  <ul class="nav__links" role="list">
+    <li><a href="#services">Features</a></li>
+    <li><a href="#results">Specs</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+
+  <div class="nav__icons">
+    {% if section.settings.nav_pill_text != blank %}
+      <span class="nav__pill">{{ section.settings.nav_pill_text }}</span>
+    {% endif %}
+    {% if section.settings.nav_cta_text != blank %}
+      <a class="nav__cta" href="{% if section.settings.nav_cta_url != blank %}{{ section.settings.nav_cta_url }}{% else %}{{ product_url }}{% endif %}">{{ section.settings.nav_cta_text }} &rarr;</a>
+    {% endif %}
+  </div>
+</nav>
+
+<section class="hero" id="top">
+  <div class="container hero__container">
+    <div class="hero__content" data-animate="fade-up">
+      {% if section.settings.hero_eyebrow != blank %}
+        <span class="hero__eyebrow">{{ section.settings.hero_eyebrow }}</span>
+      {% endif %}
+
+      <h1 class="hero__headline">{{ section.settings.hero_headline }}</h1>
+
+      {% if section.settings.hero_subheading != blank %}
+        <p class="hero__subheading">{{ section.settings.hero_subheading }}</p>
+      {% endif %}
+
+      {% if section.settings.hero_chip_text != blank %}
+        <div class="hero__chip">{{ section.settings.hero_chip_text }}</div>
+      {% endif %}
+
+      <ul class="hero__benefits" role="list">
+        {% for block in section.blocks %}
+          {% if block.type == 'hero_benefit' %}
+            <li {{ block.shopify_attributes }}>{{ block.settings.text }}</li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+
+      <div class="hero__cta">
+        {% if section.settings.hero_primary_cta_text != blank %}
+          <a class="button button--primary" href="{% if section.settings.hero_primary_cta_url != blank %}{{ section.settings.hero_primary_cta_url }}{% else %}{{ product_url }}{% endif %}">{{ section.settings.hero_primary_cta_text }}</a>
+        {% endif %}
+        {% if section.settings.hero_secondary_cta_text != blank %}
+          <a class="button button--ghost" href="{{ section.settings.hero_secondary_cta_url }}">{{ section.settings.hero_secondary_cta_text }}</a>
+        {% endif %}
+      </div>
+
+      <div class="hero__trust">
+        {% for block in section.blocks %}
+          {% if block.type == 'trust_item' %}
+            <div {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="hero__visual" aria-hidden="true">
+      {% if section.settings.hero_badge_text != blank %}
+        <div class="hero__badge">{{ section.settings.hero_badge_text }}</div>
+      {% endif %}
+      <div class="hero__device"></div>
+
+      {% assign hero_cards = section.blocks | where: 'type', 'hero_card' %}
+      {% if hero_cards.size > 0 %}
+        {% for block in hero_cards limit: 2 %}
+          <div class="hero__card {% if forloop.index == 1 %}hero__card--one{% else %}hero__card--two{% endif %}" {{ block.shopify_attributes }}>
+            <strong>{{ block.settings.title }}</strong>
+            <span>{{ block.settings.subtitle }}</span>
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="brand-strip" aria-label="Trusted by">
+  <div class="container brand-strip__container">
+    <span>{{ section.settings.trusted_by_label }}</span>
+    <ul role="list">
+      {% for block in section.blocks %}
+        {% if block.type == 'logo' %}
+          <li {{ block.shopify_attributes }}>
+            {% if block.settings.image != blank %}
+              {{ block.settings.image | image_url: width: 240 | image_tag: loading: 'lazy', alt: block.settings.alt | escape }}
+            {% else %}
+              {{ block.settings.text }}
+            {% endif %}
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="category-cards" id="services" aria-label="Services">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">{{ section.settings.services_eyebrow }}</span>
+      <h2>{{ section.settings.services_heading }}</h2>
+      {% if section.settings.services_subheading != blank %}
+        <p>{{ section.settings.services_subheading }}</p>
+      {% endif %}
+    </header>
+
+    <div class="category-cards__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'service' %}
+          <article class="category-card" data-animate="fade-up" {{ block.shopify_attributes }}>
+            {% if block.settings.tag != blank %}
+              <span class="category-card__tag">{{ block.settings.tag }}</span>
+            {% endif %}
+            <h3 class="category-card__title">{{ block.settings.title }}</h3>
+            {% if block.settings.body != blank %}
+              <p>{{ block.settings.body }}</p>
+            {% endif %}
+            <div class="category-card__placeholder" aria-hidden="true"></div>
+            {% if block.settings.link_text != blank %}
+              <a class="button button--ghost" href="{{ block.settings.link_url }}">{{ block.settings.link_text }}</a>
+            {% endif %}
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="metrics" id="results" aria-label="Results">
+  <div class="container">
+    <div class="metrics__strip">
+      {% for block in section.blocks %}
+        {% if block.type == 'stat' %}
+          <div class="metrics__item" {{ block.shopify_attributes }}>
+            <strong>{{ block.settings.value }}</strong>
+            <span>{{ block.settings.label }}</span>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="features" aria-label="How we work">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">{{ section.settings.process_eyebrow }}</span>
+      <h2>{{ section.settings.process_heading }}</h2>
+      {% if section.settings.process_subheading != blank %}
+        <p>{{ section.settings.process_subheading }}</p>
+      {% endif %}
+    </header>
+
+    <div class="features__grid">
+      {% for block in section.blocks %}
+        {% if block.type == 'process_step' %}
+          <article class="feature-card" data-animate="fade-up" {{ block.shopify_attributes }}>
+            <h3>{{ block.settings.title }}</h3>
+            <p>{{ block.settings.body }}</p>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="social-proof" id="testimonials" aria-label="Testimonials">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">{{ section.settings.testimonials_eyebrow }}</span>
+      <h2>{{ section.settings.testimonials_heading }}</h2>
+    </header>
+
+    <div class="reviews">
+      {% for block in section.blocks %}
+        {% if block.type == 'testimonial' %}
+          <article class="review" data-animate="fade-up" {{ block.shopify_attributes }}>
+            {% if block.settings.rating != blank %}
+              <div class="review__rating" aria-label="{{ block.settings.rating }} out of 5 stars">{{ block.settings.rating_stars }}</div>
+            {% endif %}
+            <p>&ldquo;{{ block.settings.quote }}&rdquo;</p>
+            <span class="review__author">&mdash; {{ block.settings.author }}</span>
+          </article>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="container">
+    <header class="section-header">
+      <span class="eyebrow">{{ section.settings.faq_eyebrow }}</span>
+      <h2>{{ section.settings.faq_heading }}</h2>
+    </header>
+
+    <div class="faq__list" data-animate="fade-up">
+      {% for block in section.blocks %}
+        {% if block.type == 'faq' %}
+          <details {% if forloop.first %}open{% endif %} {{ block.shopify_attributes }}>
+            <summary>{{ block.settings.question }}</summary>
+            <p>{{ block.settings.answer }}</p>
+          </details>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="final-cta" id="contact">
+  <div class="container final-cta__container" data-animate="fade-up">
+    <div>
+      <h2>{{ section.settings.cta_heading }}</h2>
+      <p>{{ section.settings.cta_subheading }}</p>
+    </div>
+    <a class="button button--primary" href="{% if section.settings.cta_button_url != blank %}{{ section.settings.cta_button_url }}{% else %}{{ product_url }}{% endif %}">{{ section.settings.cta_button_text }}</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Company landing",
+  "settings": [
+    {
+      "type": "text",
+      "id": "product_handle",
+      "label": "Product handle (for auto-linking)",
+      "default": "electric-nail-cutter"
+    },
+    {
+      "type": "text",
+      "id": "brand_name",
+      "label": "Brand name",
+      "default": "Topline World"
+    },
+    {
+      "type": "text",
+      "id": "logo_badge",
+      "label": "Logo badge letters",
+      "default": "TW"
+    },
+    {
+      "type": "text",
+      "id": "top_bar_text",
+      "label": "Top bar text",
+      "default": "Book a free growth audit • Response in 24h"
+    },
+    {
+      "type": "text",
+      "id": "top_bar_link_text",
+      "label": "Top bar link text",
+      "default": "See features"
+    },
+    {
+      "type": "text",
+      "id": "top_bar_link_url",
+      "label": "Top bar link (anchor or URL)",
+      "default": "#services"
+    },
+    {
+      "type": "text",
+      "id": "nav_pill_text",
+      "label": "Nav pill text",
+      "default": "Safe. Fast. Clean."
+    },
+    {
+      "type": "text",
+      "id": "nav_cta_text",
+      "label": "Nav CTA text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "nav_cta_url",
+      "label": "Nav CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "hero_eyebrow",
+      "label": "Hero eyebrow",
+      "default": "Automatic nail clipper"
+    },
+    {
+      "type": "text",
+      "id": "hero_headline",
+      "label": "Hero headline",
+      "default": "Salon-smooth nails — without the stress."
+    },
+    {
+      "type": "textarea",
+      "id": "hero_subheading",
+      "label": "Hero subheading",
+      "default": "Trim, smooth, and finish in seconds with a safer automatic clipper designed for home use."
+    },
+    {
+      "type": "text",
+      "id": "hero_chip_text",
+      "label": "Hero chip text",
+      "default": "USB rechargeable • Built-in nail catcher • Safety guard"
+    },
+    {
+      "type": "text",
+      "id": "hero_primary_cta_text",
+      "label": "Hero primary CTA text",
+      "default": "Shop the clipper"
+    },
+    {
+      "type": "url",
+      "id": "hero_primary_cta_url",
+      "label": "Hero primary CTA URL"
+    },
+    {
+      "type": "text",
+      "id": "hero_secondary_cta_text",
+      "label": "Hero secondary CTA text",
+      "default": "See how it works"
+    },
+    {
+      "type": "text",
+      "id": "hero_secondary_cta_url",
+      "label": "Hero secondary CTA anchor",
+      "default": "#services"
+    },
+    {
+      "type": "text",
+      "id": "hero_badge_text",
+      "label": "Hero badge",
+      "default": "Best seller"
+    },
+    {
+      "type": "text",
+      "id": "trusted_by_label",
+      "label": "Trusted by label",
+      "default": "Trusted by"
+    },
+    {
+      "type": "text",
+      "id": "services_eyebrow",
+      "label": "Services eyebrow",
+      "default": "Why it’s different"
+    },
+    {
+      "type": "text",
+      "id": "services_heading",
+      "label": "Services heading",
+      "default": "Designed for safe, clean, effortless trimming."
+    },
+    {
+      "type": "textarea",
+      "id": "services_subheading",
+      "label": "Services subheading",
+      "default": "A comfortable routine for kids, seniors, and anyone tired of jagged clippers." 
+    },
+    {
+      "type": "text",
+      "id": "process_eyebrow",
+      "label": "Process eyebrow",
+      "default": "How it works"
+    },
+    {
+      "type": "text",
+      "id": "process_heading",
+      "label": "Process heading",
+      "default": "Three simple steps to a smooth finish."
+    },
+    {
+      "type": "textarea",
+      "id": "process_subheading",
+      "label": "Process subheading",
+      "default": "Switch on, guide along the edge, and empty the catcher — that’s it."
+    },
+    {
+      "type": "text",
+      "id": "testimonials_eyebrow",
+      "label": "Testimonials eyebrow",
+      "default": "Real reviews"
+    },
+    {
+      "type": "text",
+      "id": "testimonials_heading",
+      "label": "Testimonials heading",
+      "default": "Loved by careful hands."
+    },
+    {
+      "type": "text",
+      "id": "faq_eyebrow",
+      "label": "FAQ eyebrow",
+      "default": "Questions"
+    },
+    {
+      "type": "text",
+      "id": "faq_heading",
+      "label": "FAQ heading",
+      "default": "FAQ"
+    },
+    {
+      "type": "text",
+      "id": "cta_heading",
+      "label": "Final CTA heading",
+      "default": "Ready for the easiest trim ever?"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_subheading",
+      "label": "Final CTA subheading",
+      "default": "Join customers who upgraded their routine in minutes."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "Final CTA button text",
+      "default": "Shop now"
+    },
+    {
+      "type": "url",
+      "id": "cta_button_url",
+      "label": "Final CTA button URL"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "hero_benefit",
+      "name": "Hero benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Conversion-focused design and development"
+        }
+      ]
+    },
+    {
+      "type": "trust_item",
+      "name": "Trust item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Fast turnaround"
+        }
+      ]
+    },
+    {
+      "type": "hero_card",
+      "name": "Hero card",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Speed"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Ship improvements weekly"
+        }
+      ]
+    },
+    {
+      "type": "logo",
+      "name": "Trusted by logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo image"
+        },
+        {
+          "type": "text",
+          "id": "alt",
+          "label": "Alt text",
+          "default": "Client logo"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Fallback text",
+          "default": "ClientName"
+        }
+      ]
+    },
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        {
+          "type": "text",
+          "id": "tag",
+          "label": "Tag",
+          "default": "Strategy"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Conversion audit"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body",
+          "default": "A prioritized list of changes that increase revenue: speed, UX, messaging, and checkout friction."
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link text",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    },
+    {
+      "type": "stat",
+      "name": "Stat",
+      "settings": [
+        {
+          "type": "text",
+          "id": "value",
+          "label": "Value",
+          "default": "+32%"
+        },
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "conversion rate"
+        }
+      ]
+    },
+    {
+      "type": "process_step",
+      "name": "Process step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Audit"
+        },
+        {
+          "type": "textarea",
+          "id": "body",
+          "label": "Body",
+          "default": "We review your storefront, analytics, and customer journey to find the highest ROI fixes."
+        }
+      ]
+    },
+    {
+      "type": "testimonial",
+      "name": "Testimonial",
+      "settings": [
+        {
+          "type": "text",
+          "id": "rating",
+          "label": "Rating number",
+          "default": "5"
+        },
+        {
+          "type": "text",
+          "id": "rating_stars",
+          "label": "Stars",
+          "default": "★★★★★"
+        },
+        {
+          "type": "textarea",
+          "id": "quote",
+          "label": "Quote",
+          "default": "They cleaned up our homepage and we saw conversion lift within a week."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Client Name"
+        }
+      ]
+    },
+    {
+      "type": "faq",
+      "name": "FAQ",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "How fast can you ship improvements?"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer",
+          "default": "Most projects deliver the first meaningful update within 7-10 days, then we ship weekly." 
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Company landing",
+      "blocks": [
+        { "type": "hero_benefit", "settings": { "text": "Safety guard helps prevent nicks" } },
+        { "type": "hero_benefit", "settings": { "text": "Built-in catcher keeps trims contained" } },
+        { "type": "hero_benefit", "settings": { "text": "Quick trim + smooth finish" } },
+
+        { "type": "trust_item", "settings": { "text": "30-day risk-free" } },
+        { "type": "trust_item", "settings": { "text": "Fast shipping" } },
+        { "type": "trust_item", "settings": { "text": "Friendly support" } },
+
+        { "type": "hero_card", "settings": { "title": "Quiet motor", "subtitle": "Comfortable at-home use" } },
+        { "type": "hero_card", "settings": { "title": "Clean finish", "subtitle": "Smooth edges in seconds" } },
+
+        { "type": "logo", "settings": { "text": "Featured by" } },
+        { "type": "logo", "settings": { "text": "Care Weekly" } },
+        { "type": "logo", "settings": { "text": "Home Essentials" } },
+        { "type": "logo", "settings": { "text": "Tech & Self-Care" } },
+
+        { "type": "service", "settings": { "tag": "Safety", "title": "Skin-friendly guard", "body": "Helps protect cuticles and skin while guiding the trim for a confident routine.", "link_text": "Learn more" } },
+        { "type": "service", "settings": { "tag": "Clean", "title": "Built-in catcher", "body": "Contains nail clippings so cleanup is quick and mess stays off the floor.", "link_text": "See how" } },
+        { "type": "service", "settings": { "tag": "Comfort", "title": "Smooth finish", "body": "Designed to leave a neat edge so you spend less time filing after.", "link_text": "See results" } },
+        { "type": "service", "settings": { "tag": "Power", "title": "Rechargeable", "body": "Cordless convenience for trimming anywhere at home — no disposable batteries.", "link_text": "View specs" } },
+
+        { "type": "stat", "settings": { "value": "40k+", "label": "happy customers" } },
+        { "type": "stat", "settings": { "value": "4.9★", "label": "average rating" } },
+        { "type": "stat", "settings": { "value": "60 min", "label": "cordless use" } },
+        { "type": "stat", "settings": { "value": "0 nicks", "label": "safer routine" } },
+
+        { "type": "process_step", "settings": { "title": "Prep", "body": "Choose your speed and place the guard at the nail edge." } },
+        { "type": "process_step", "settings": { "title": "Trim", "body": "Gently guide along the edge for a neat, controlled trim." } },
+        { "type": "process_step", "settings": { "title": "Clean", "body": "Empty the catcher and you’re done — no scattered clippings." } },
+
+        { "type": "testimonial", "settings": { "rating": "5", "rating_stars": "★★★★★", "quote": "I bought it for my toddler’s nails, but now the whole family uses it. Zero tears.", "author": "Verified buyer" } },
+        { "type": "testimonial", "settings": { "rating": "5", "rating_stars": "★★★★★", "quote": "Cleaner than normal clippers. The catcher is a game changer.", "author": "Verified buyer" } },
+        { "type": "testimonial", "settings": { "rating": "5", "rating_stars": "★★★★★", "quote": "My hands shake a bit and this makes trimming feel way safer.", "author": "Verified buyer" } },
+
+        { "type": "faq", "settings": { "question": "Is it safe for kids or seniors?", "answer": "The safety guard helps prevent nicks and makes it easier to guide the trim. Always supervise children." } },
+        { "type": "faq", "settings": { "question": "How do I clean it?", "answer": "Empty the catcher after use and wipe the head/body with a dry cloth. Follow your product instructions for deep cleaning." } },
+        { "type": "faq", "settings": { "question": "What’s in the box?", "answer": "Typically the clipper, charging cable, and quick start guide. Check the product page for your exact bundle." } }
+      ]
+    }
+  ]
+}
+{% endschema %}

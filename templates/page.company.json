@@ -1,0 +1,43 @@
+{
+  "sections": {
+    "main": {
+      "type": "company-landing",
+      "settings": {
+        "product_handle": "electric-nail-cutter",
+        "brand_name": "Topline World",
+        "logo_badge": "TW",
+        "top_bar_text": "Free shipping on bundles • 30-day risk-free trial",
+        "top_bar_link_text": "See features",
+        "top_bar_link_url": "#services",
+        "nav_pill_text": "Safe. Fast. Clean.",
+        "nav_cta_text": "Shop now",
+        "nav_cta_url": "",
+        "hero_eyebrow": "Automatic nail clipper",
+        "hero_headline": "Salon-smooth nails — without the stress.",
+        "hero_subheading": "Trim, smooth, and finish in seconds with a safer automatic clipper designed for home use.",
+        "hero_chip_text": "USB rechargeable • Built-in nail catcher • Safety guard",
+        "hero_primary_cta_text": "Shop the clipper",
+        "hero_primary_cta_url": "",
+        "hero_secondary_cta_text": "See how it works",
+        "hero_secondary_cta_url": "#services",
+        "hero_badge_text": "Best seller",
+        "trusted_by_label": "Trusted by",
+        "services_eyebrow": "Why it’s different",
+        "services_heading": "Designed for safe, clean, effortless trimming.",
+        "services_subheading": "A comfortable routine for kids, seniors, and anyone tired of jagged clippers.",
+        "process_eyebrow": "How it works",
+        "process_heading": "Three simple steps to a smooth finish.",
+        "process_subheading": "Switch on, guide along the edge, and empty the catcher — that’s it.",
+        "testimonials_eyebrow": "Real reviews",
+        "testimonials_heading": "Loved by careful hands.",
+        "faq_eyebrow": "Questions",
+        "faq_heading": "FAQ",
+        "cta_heading": "Ready for the easiest trim ever?",
+        "cta_subheading": "Join customers who upgraded their routine in minutes.",
+        "cta_button_text": "Shop now",
+        "cta_button_url": ""
+      }
+    }
+  },
+  "order": ["main"]
+}
