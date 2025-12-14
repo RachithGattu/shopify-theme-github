@@ -1,1 +1,246 @@
-{"sections":{"main":{"type":"main-product","blocks":{"vendor":{"type":"vendor","disabled":false,"settings":{}},"title":{"type":"title","settings":{"heading_tag":"h1"}},"badges":{"type":"badges","settings":{}},"rating":{"type":"rating","settings":{"show_empty":true}},"price":{"type":"price","settings":{"show_taxes_notice":true}},"payment_terms":{"type":"payment_terms","settings":{}},"separator":{"type":"separator","settings":{}},"custom_liquid_trust":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"trust-badges\" style=\"display: flex; gap: 15px; flex-wrap: wrap; margin: 20px 0; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);\">\n  <div style=\"display: flex; align-items: center; gap: 8px; padding: 10px 15px; background: rgba(255,255,255,0.95); border-radius: 8px; flex: 1; min-width: 140px;\">\n    <svg width=\"24\" height=\"24\" fill=\"#10b981\" viewBox=\"0 0 20 20\"><path d=\"M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z\"/></svg>\n    <span style=\"font-weight: 600; font-size: 13px; color: #1f2937;\">✓ Secure Checkout</span>\n  </div>\n  <div style=\"display: flex; align-items: center; gap: 8px; padding: 10px 15px; background: rgba(255,255,255,0.95); border-radius: 8px; flex: 1; min-width: 140px;\">\n    <svg width=\"24\" height=\"24\" fill=\"#10b981\" viewBox=\"0 0 20 20\"><path d=\"M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z\"/><path d=\"M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z\"/></svg>\n    <span style=\"font-weight: 600; font-size: 13px; color: #1f2937;\">✓ Free Shipping</span>\n  </div>\n  <div style=\"display: flex; align-items: center; gap: 8px; padding: 10px 15px; background: rgba(255,255,255,0.95); border-radius: 8px; flex: 1; min-width: 140px;\">\n    <svg width=\"24\" height=\"24\" fill=\"#10b981\" viewBox=\"0 0 20 20\"><path fill-rule=\"evenodd\" d=\"M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z\" clip-rule=\"evenodd\"/></svg>\n    <span style=\"font-weight: 600; font-size: 13px; color: #1f2937;\">✓ 30-Day Returns</span>\n  </div>\n</div>"}},"custom_liquid_flash":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"flash-sale-banner\" style=\"background: linear-gradient(90deg, #ff6b6b 0%, #ee5a6f 100%); padding: 12px 20px; border-radius: 8px; margin: 15px 0; text-align: center; box-shadow: 0 4px 15px rgba(255,107,107,0.3); animation: pulse 2s infinite;\">\n  <style>@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.02); } }</style>\n  <div style=\"color: white; font-weight: 700; font-size: 16px; display: flex; align-items: center; justify-content: center; gap: 10px;\">\n    <span style=\"font-size: 20px;\">🔥</span>\n    <span>FLASH SALE: 25% OFF - LIMITED TIME!</span>\n    <span style=\"background: rgba(0,0,0,0.3); padding: 4px 12px; border-radius: 20px; font-size: 14px;\">Ends Soon!</span>\n  </div>\n</div>"}},"custom_liquid_stock":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"stock-indicator\" style=\"margin: 15px 0; padding: 15px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); border-radius: 10px; border-left: 4px solid #dc2626;\">\n  <div style=\"display: flex; align-items: center; gap: 10px; margin-bottom: 8px;\">\n    <div style=\"width: 10px; height: 10px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 10px #22c55e; animation: blink 1.5s infinite;\"></div>\n    <style>@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }</style>\n    <span style=\"font-weight: 700; color: white; font-size: 15px;\">🚨 Only 7 Items Left in Stock!</span>\n  </div>\n  <div style=\"background: rgba(255,255,255,0.3); height: 8px; border-radius: 10px; overflow: hidden;\">\n    <div style=\"background: linear-gradient(90deg, #fbbf24, #f59e0b); width: 35%; height: 100%; border-radius: 10px; box-shadow: 0 0 10px rgba(251,191,36,0.6);\"></div>\n  </div>\n  <p style=\"margin-top: 8px; color: white; font-size: 13px; font-weight: 500;\">⚡ High Demand - 23 people viewing this right now!</p>\n</div>"}},"variant_picker":{"type":"variant_picker","settings":{"hide_sold_out_variants":false,"stack_blocks":false,"selector_mode":"block","color_mode":"color","size_chart_page":""}},"quantity_selector":{"type":"quantity_selector","settings":{}},"buy_buttons":{"type":"buy_buttons","settings":{"show_payment_button":true,"atc_button_background":"#10b981","atc_button_text_color":"#ffffff","payment_button_background":"#8b5cf6","payment_button_text_color":"#ffffff"}},"custom_liquid_timer":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"countdown-timer\" style=\"margin: 20px 0; padding: 20px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.15);\">\n  <p style=\"color: #fff; font-weight: 700; font-size: 16px; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px;\">⏰ Special Offer Ends In:</p>\n  <div style=\"display: flex; justify-content: center; gap: 15px;\">\n    <div style=\"background: rgba(255,255,255,0.95); padding: 15px 20px; border-radius: 10px; min-width: 70px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);\">\n      <div style=\"font-size: 28px; font-weight: 800; color: #1f2937; line-height: 1;\">05</div>\n      <div style=\"font-size: 11px; color: #6b7280; font-weight: 600; margin-top: 5px; text-transform: uppercase;\">Hours</div>\n    </div>\n    <div style=\"background: rgba(255,255,255,0.95); padding: 15px 20px; border-radius: 10px; min-width: 70px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);\">\n      <div style=\"font-size: 28px; font-weight: 800; color: #1f2937; line-height: 1;\">23</div>\n      <div style=\"font-size: 11px; color: #6b7280; font-weight: 600; margin-top: 5px; text-transform: uppercase;\">Mins</div>\n    </div>\n    <div style=\"background: rgba(255,255,255,0.95); padding: 15px 20px; border-radius: 10px; min-width: 70px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);\">\n      <div style=\"font-size: 28px; font-weight: 800; color: #1f2937; line-height: 1;\">47</div>\n      <div style=\"font-size: 11px; color: #6b7280; font-weight: 600; margin-top: 5px; text-transform: uppercase;\">Secs</div>\n    </div>\n  </div>\n</div>"}},"separator2":{"type":"separator","settings":{}},"description":{"type":"description","settings":{"collapse_content":false}},"custom_liquid_features":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"product-features\" style=\"margin: 25px 0; padding: 25px; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);\">\n  <h3 style=\"font-size: 20px; font-weight: 800; margin-bottom: 20px; color: #1f2937; text-align: center; text-transform: uppercase; letter-spacing: 1px;\">✨ Premium Features</h3>\n  <div style=\"display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;\">\n    <div style=\"background: white; padding: 18px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1); transition: transform 0.3s;\">\n      <div style=\"font-size: 32px; margin-bottom: 10px;\">💎</div>\n      <h4 style=\"font-weight: 700; color: #1f2937; margin-bottom: 8px; font-size: 15px;\">Premium Quality</h4>\n      <p style=\"color: #6b7280; font-size: 13px; line-height: 1.5;\">Crafted with the finest materials for lasting durability</p>\n    </div>\n    <div style=\"background: white; padding: 18px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);\">\n      <div style=\"font-size: 32px; margin-bottom: 10px;\">⚡</div>\n      <h4 style=\"font-weight: 700; color: #1f2937; margin-bottom: 8px; font-size: 15px;\">Fast Delivery</h4>\n      <p style=\"color: #6b7280; font-size: 13px; line-height: 1.5;\">Express shipping available - Get it in 2-3 days</p>\n    </div>\n    <div style=\"background: white; padding: 18px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);\">\n      <div style=\"font-size: 32px; margin-bottom: 10px;\">🏆</div>\n      <h4 style=\"font-weight: 700; color: #1f2937; margin-bottom: 8px; font-size: 15px;\">Award Winning</h4>\n      <p style=\"color: #6b7280; font-size: 13px; line-height: 1.5;\">Recognized by industry experts worldwide</p>\n    </div>\n    <div style=\"background: white; padding: 18px; border-radius: 10px; box-shadow: 0 3px 10px rgba(0,0,0,0.1);\">\n      <div style=\"font-size: 32px; margin-bottom: 10px;\">🌟</div>\n      <h4 style=\"font-weight: 700; color: #1f2937; margin-bottom: 8px; font-size: 15px;\">5-Star Rated</h4>\n      <p style=\"color: #6b7280; font-size: 13px; line-height: 1.5;\">Loved by over 10,000+ satisfied customers</p>\n    </div>\n  </div>\n</div>"}},"custom_liquid_reviews":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"customer-reviews\" style=\"margin: 30px 0; padding: 25px; background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%); border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08);\">\n  <h3 style=\"font-size: 22px; font-weight: 800; margin-bottom: 20px; color: #1f2937; text-align: center;\">💬 What Our Customers Say</h3>\n  <div style=\"display: grid; gap: 15px;\">\n    <div style=\"background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.08);\">\n      <div style=\"display: flex; gap: 3px; margin-bottom: 10px;\">\n        <span style=\"color: #fbbf24; font-size: 18px;\">★★★★★</span>\n      </div>\n      <p style=\"color: #374151; font-size: 14px; line-height: 1.6; margin-bottom: 12px; font-style: italic;\">\"Absolutely love this product! Quality is outstanding and delivery was super fast. Highly recommend!\"</p>\n      <div style=\"display: flex; align-items: center; gap: 10px;\">\n        <div style=\"width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\"></div>\n        <div>\n          <p style=\"font-weight: 700; color: #1f2937; font-size: 14px;\">Sarah M.</p>\n          <p style=\"color: #9ca3af; font-size: 12px;\">Verified Buyer</p>\n        </div>\n      </div>\n    </div>\n    <div style=\"background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.08);\">\n      <div style=\"display: flex; gap: 3px; margin-bottom: 10px;\">\n        <span style=\"color: #fbbf24; font-size: 18px;\">★★★★★</span>\n      </div>\n      <p style=\"color: #374151; font-size: 14px; line-height: 1.6; margin-bottom: 12px; font-style: italic;\">\"Best purchase I've made this year. Exceeded all expectations. Worth every penny!\"</p>\n      <div style=\"display: flex; align-items: center; gap: 10px;\">\n        <div style=\"width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);\"></div>\n        <div>\n          <p style=\"font-weight: 700; color: #1f2937; font-size: 14px;\">James T.</p>\n          <p style=\"color: #9ca3af; font-size: 12px;\">Verified Buyer</p>\n        </div>\n      </div>\n    </div>\n    <div style=\"background: white; padding: 20px; border-radius: 10px; box-shadow: 0 3px 12px rgba(0,0,0,0.08);\">\n      <div style=\"display: flex; gap: 3px; margin-bottom: 10px;\">\n        <span style=\"color: #fbbf24; font-size: 18px;\">★★★★★</span>\n      </div>\n      <p style=\"color: #374151; font-size: 14px; line-height: 1.6; margin-bottom: 12px; font-style: italic;\">\"Fantastic quality and amazing customer service. Will definitely be ordering again!\"</p>\n      <div style=\"display: flex; align-items: center; gap: 10px;\">\n        <div style=\"width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);\"></div>\n        <div>\n          <p style=\"font-weight: 700; color: #1f2937; font-size: 14px;\">Emma L.</p>\n          <p style=\"color: #9ca3af; font-size: 12px;\">Verified Buyer</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>"}},"custom_liquid_guarantee":{"type":"custom_liquid","settings":{"custom_liquid":"<div class=\"guarantee-badge\" style=\"margin: 25px 0; padding: 25px; background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); border-radius: 12px; text-align: center; box-shadow: 0 8px 25px rgba(0,0,0,0.12);\">\n  <div style=\"font-size: 48px; margin-bottom: 15px;\">🛡️</div>\n  <h3 style=\"color: white; font-size: 22px; font-weight: 800; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 1px;\">100% Money-Back Guarantee</h3>\n  <p style=\"color: rgba(255,255,255,0.95); font-size: 15px; line-height: 1.6; max-width: 500px; margin: 0 auto;\">Not satisfied? Get a full refund within 30 days. No questions asked. Your satisfaction is our priority!</p>\n</div>"}}},"block_order":["vendor","title","badges","rating","custom_liquid_flash","price","payment_terms","separator","custom_liquid_trust","custom_liquid_stock","variant_picker","quantity_selector","buy_buttons","custom_liquid_timer","separator2","description","custom_liquid_features","custom_liquid_reviews","custom_liquid_guarantee"],"settings":{"full_width":true,"show_fixed_add_to_cart":true,"desktop_media_width":50,"desktop_media_layout":"carousel_thumbnails_left","mobile_media_size":"expanded","mobile_carousel_control":"floating_dots","enable_video_autoplay":true,"enable_video_looping":true,"enable_image_zoom":true,"max_image_zoom_level":3,"background":"","background_gradient":"linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(249, 250, 251, 1))","text_color":"","input_background":"rgba(255,255,255,0.9)","input_text_color":""}},"product-recommendations":{"type":"product-recommendations","settings":{"recommendations_count":8,"products":[],"full_width":true,"stack_products":false,"show_progress_bar":true,"products_per_row_mobile":"2","products_per_row_desktop":4,"subheading":"✨ Complete Your Look","title":"You May Also Love","content":"<p style='text-align: center; color: #6b7280;'>Customers who bought this item also purchased these trending products</p>","background":"","background_gradient":"linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)","text_color":"","heading_color":"#1f2937","heading_gradient":"","product_card_background":"#ffffff","product_card_text_color":""}}},"order":["main","product-recommendations"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "vendor": {
+          "type": "vendor",
+          "disabled": false,
+          "settings": {}
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "heading_tag": "h1"
+          }
+        },
+        "badges": {
+          "type": "badges",
+          "settings": {}
+        },
+        "rating": {
+          "type": "rating",
+          "settings": {
+            "show_empty": true
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "show_taxes_notice": false
+          }
+        },
+        "payment_terms": {
+          "type": "payment_terms",
+          "settings": {}
+        },
+        "separator": {
+          "type": "separator",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "hide_sold_out_variants": false,
+            "stack_blocks": true,
+            "selector_mode": "block",
+            "color_mode": "color",
+            "size_chart_page": ""
+          }
+        },
+        "quantity_selector": {
+          "type": "quantity_selector",
+          "settings": {}
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_payment_button": true,
+            "atc_button_background": "",
+            "atc_button_text_color": "",
+            "payment_button_background": "",
+            "payment_button_text_color": ""
+          }
+        },
+        "separator2": {
+          "type": "separator",
+          "settings": {}
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "collapse_content": false
+          }
+        }
+      },
+      "block_order": [
+        "vendor",
+        "title",
+        "badges",
+        "rating",
+        "price",
+        "payment_terms",
+        "separator",
+        "variant_picker",
+        "quantity_selector",
+        "buy_buttons",
+        "separator2",
+        "description"
+      ],
+      "settings": {
+        "full_width": true,
+        "show_fixed_add_to_cart": true,
+        "desktop_media_width": 55,
+        "desktop_media_layout": "carousel_thumbnails_left",
+        "mobile_media_size": "expanded",
+        "mobile_carousel_control": "floating_dots",
+        "enable_video_autoplay": false,
+        "enable_video_looping": true,
+        "enable_image_zoom": true,
+        "max_image_zoom_level": 3,
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "input_background": "rgba(0,0,0,0)",
+        "input_text_color": ""
+      }
+    },
+    "trust_badges": {
+      "type": "product-trust-badges",
+      "settings": {
+        "show_flash_sale": true,
+        "flash_sale_text": "FLASH SALE: 25% OFF - LIMITED TIME!",
+        "flash_badge_text": "Ends Soon!",
+        "show_trust_badges": true,
+        "badge_gradient_start": "#667eea",
+        "badge_gradient_end": "#764ba2",
+        "show_stock_indicator": true,
+        "stock_count": 7,
+        "viewers_count": 23,
+        "show_countdown": true,
+        "countdown_title": "Special Offer Ends In:"
+      }
+    },
+    "product_features": {
+      "type": "product-features-grid",
+      "blocks": {
+        "feature_1": {
+          "type": "feature",
+          "settings": {
+            "icon": "💎",
+            "title": "Premium Quality",
+            "description": "Crafted with the finest materials for lasting durability"
+          }
+        },
+        "feature_2": {
+          "type": "feature",
+          "settings": {
+            "icon": "⚡",
+            "title": "Fast Delivery",
+            "description": "Express shipping available - Get it in 2-3 days"
+          }
+        },
+        "feature_3": {
+          "type": "feature",
+          "settings": {
+            "icon": "🏆",
+            "title": "Award Winning",
+            "description": "Recognized by industry experts worldwide"
+          }
+        },
+        "feature_4": {
+          "type": "feature",
+          "settings": {
+            "icon": "🌟",
+            "title": "5-Star Rated",
+            "description": "Loved by over 10,000+ satisfied customers"
+          }
+        }
+      },
+      "block_order": [
+        "feature_1",
+        "feature_2",
+        "feature_3",
+        "feature_4"
+      ],
+      "settings": {
+        "show_title": true,
+        "title": "✨ Premium Features",
+        "title_color": "#1f2937",
+        "background_color": "#ffecd2",
+        "show_guarantee": true,
+        "guarantee_title": "100% Money-Back Guarantee",
+        "guarantee_text": "Not satisfied? Get a full refund within 30 days. No questions asked. Your satisfaction is our priority!"
+      }
+    },
+    "customer_reviews": {
+      "type": "product-reviews-showcase",
+      "blocks": {
+        "review_1": {
+          "type": "review",
+          "settings": {
+            "review_text": "Absolutely love this product! Quality is outstanding and delivery was super fast. Highly recommend!",
+            "author_name": "Sarah M."
+          }
+        },
+        "review_2": {
+          "type": "review",
+          "settings": {
+            "review_text": "Best purchase I've made this year. Exceeded all expectations. Worth every penny!",
+            "author_name": "James T."
+          }
+        },
+        "review_3": {
+          "type": "review",
+          "settings": {
+            "review_text": "Fantastic quality and amazing customer service. Will definitely be ordering again!",
+            "author_name": "Emma L."
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ],
+      "settings": {
+        "show_title": true,
+        "title": "💬 What Our Customers Say",
+        "title_color": "#1f2937",
+        "background_color": "#a8edea",
+        "show_stats": true,
+        "total_reviews": "2.5K+",
+        "happy_customers": "10K+"
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "recommendations_count": 6,
+        "products": [],
+        "full_width": true,
+        "stack_products": false,
+        "show_progress_bar": true,
+        "products_per_row_mobile": "2",
+        "products_per_row_desktop": 4,
+        "subheading": "Complete Your Look",
+        "title": "You May Also Love",
+        "content": "",
+        "background": "",
+        "background_gradient": "",
+        "text_color": "",
+        "heading_color": "",
+        "heading_gradient": "",
+        "product_card_background": "",
+        "product_card_text_color": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "trust_badges",
+    "product_features",
+    "customer_reviews",
+    "product-recommendations"
+  ]
+}

@@ -1,0 +1,365 @@
+<style>
+  .product-trust-section {
+    padding: 30px 0;
+  }
+  
+  .trust-badges-wrapper {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .trust-badge {
+    flex: 1;
+    min-width: 200px;
+    background: linear-gradient(135deg, {{ section.settings.badge_gradient_start }}, {{ section.settings.badge_gradient_end }});
+    padding: 25px 20px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .trust-badge:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+  }
+  
+  .trust-badge-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  .trust-badge-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  
+  .trust-badge-text {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.9);
+    line-height: 1.6;
+  }
+  
+  .flash-sale-banner {
+    background: linear-gradient(90deg, #ff6b6b 0%, #ee5a6f 100%);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px auto;
+    max-width: 800px;
+    text-align: center;
+    box-shadow: 0 6px 25px rgba(255, 107, 107, 0.4);
+    animation: pulse-banner 2s infinite;
+  }
+  
+  @keyframes pulse-banner {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+  
+  .flash-sale-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+  }
+  
+  .flash-badge {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 6px 16px;
+    border-radius: 25px;
+    font-size: 14px;
+  }
+  
+  .stock-indicator-wrapper {
+    max-width: 600px;
+    margin: 25px auto;
+    padding: 20px 25px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 12px;
+    border-left: 5px solid #dc2626;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .stock-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  
+  .stock-dot {
+    width: 12px;
+    height: 12px;
+    background: #22c55e;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #22c55e;
+    animation: blink 1.5s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+  
+  .stock-text {
+    font-weight: 700;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .stock-progress-bar {
+    background: rgba(255, 255, 255, 0.3);
+    height: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+  
+  .stock-progress-fill {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+    width: 35%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.8);
+    animation: pulse-progress 2s infinite;
+  }
+  
+  @keyframes pulse-progress {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+  }
+  
+  .stock-info {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+  }
+  
+  .countdown-timer-wrapper {
+    max-width: 500px;
+    margin: 30px auto;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+  }
+  
+  .countdown-title {
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  
+  .countdown-boxes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .countdown-box {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 20px 25px;
+    border-radius: 12px;
+    min-width: 80px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  .countdown-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: #1f2937;
+    line-height: 1;
+  }
+  
+  .countdown-label {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 600;
+    margin-top: 8px;
+    text-transform: uppercase;
+  }
+</style>
+
+<div class="product-trust-section">
+  {%- if section.settings.show_flash_sale -%}
+    <div class="flash-sale-banner">
+      <div class="flash-sale-content">
+        <span style="font-size: 24px;">🔥</span>
+        <span>{{ section.settings.flash_sale_text }}</span>
+        <span class="flash-badge">{{ section.settings.flash_badge_text }}</span>
+      </div>
+    </div>
+  {%- endif -%}
+  
+  {%- if section.settings.show_trust_badges -%}
+    <div class="trust-badges-wrapper">
+      <div class="trust-badge">
+        <div class="trust-badge-icon">✓</div>
+        <div class="trust-badge-title">Secure Checkout</div>
+        <div class="trust-badge-text">Protected by SSL encryption</div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">🚚</div>
+        <div class="trust-badge-title">Free Shipping</div>
+        <div class="trust-badge-text">On orders over $50</div>
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">↻</div>
+        <div class="trust-badge-title">30-Day Returns</div>
+        <div class="trust-badge-text">Hassle-free returns policy</div>
+      </div>
+    </div>
+  {%- endif -%}
+  
+  {%- if section.settings.show_stock_indicator -%}
+    <div class="stock-indicator-wrapper">
+      <div class="stock-header">
+        <div class="stock-dot"></div>
+        <span class="stock-text">🚨 Only {{ section.settings.stock_count }} Items Left in Stock!</span>
+      </div>
+      <div class="stock-progress-bar">
+        <div class="stock-progress-fill"></div>
+      </div>
+      <p class="stock-info">⚡ High Demand - {{ section.settings.viewers_count }} people viewing this right now!</p>
+    </div>
+  {%- endif -%}
+  
+  {%- if section.settings.show_countdown -%}
+    <div class="countdown-timer-wrapper">
+      <p class="countdown-title">⏰ {{ section.settings.countdown_title }}</p>
+      <div class="countdown-boxes">
+        <div class="countdown-box">
+          <div class="countdown-number">05</div>
+          <div class="countdown-label">Hours</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-number">23</div>
+          <div class="countdown-label">Mins</div>
+        </div>
+        <div class="countdown-box">
+          <div class="countdown-number">47</div>
+          <div class="countdown-label">Secs</div>
+        </div>
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Product Trust Badges",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Flash Sale Banner"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_flash_sale",
+      "label": "Show flash sale banner",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "flash_sale_text",
+      "label": "Flash sale text",
+      "default": "FLASH SALE: 25% OFF - LIMITED TIME!"
+    },
+    {
+      "type": "text",
+      "id": "flash_badge_text",
+      "label": "Badge text",
+      "default": "Ends Soon!"
+    },
+    {
+      "type": "header",
+      "content": "Trust Badges"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_trust_badges",
+      "label": "Show trust badges",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "badge_gradient_start",
+      "label": "Badge gradient start",
+      "default": "#667eea"
+    },
+    {
+      "type": "color",
+      "id": "badge_gradient_end",
+      "label": "Badge gradient end",
+      "default": "#764ba2"
+    },
+    {
+      "type": "header",
+      "content": "Stock Indicator"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stock_indicator",
+      "label": "Show stock indicator",
+      "default": true
+    },
+    {
+      "type": "number",
+      "id": "stock_count",
+      "label": "Stock count",
+      "default": 7
+    },
+    {
+      "type": "number",
+      "id": "viewers_count",
+      "label": "Current viewers",
+      "default": 23
+    },
+    {
+      "type": "header",
+      "content": "Countdown Timer"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_countdown",
+      "label": "Show countdown timer",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "countdown_title",
+      "label": "Countdown title",
+      "default": "Special Offer Ends In:"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Trust Badges"
+    }
+  ]
+}
+{% endschema %}

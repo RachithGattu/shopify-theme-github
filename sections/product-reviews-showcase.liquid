@@ -1,0 +1,324 @@
+<style>
+  .reviews-showcase-section {
+    padding: 50px 20px;
+    background: {{ section.settings.background_color }};
+  }
+  
+  .reviews-container {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .reviews-title {
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 35px;
+    color: {{ section.settings.title_color }};
+    text-align: center;
+  }
+  
+  .reviews-grid {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  .review-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .review-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 120px;
+    color: rgba(0, 0, 0, 0.05);
+    font-family: Georgia, serif;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+  }
+  
+  .review-stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .review-stars span {
+    color: #fbbf24;
+    font-size: 22px;
+    animation: star-pop 0.5s ease;
+  }
+  
+  .review-stars span:nth-child(1) { animation-delay: 0.1s; }
+  .review-stars span:nth-child(2) { animation-delay: 0.2s; }
+  .review-stars span:nth-child(3) { animation-delay: 0.3s; }
+  .review-stars span:nth-child(4) { animation-delay: 0.4s; }
+  .review-stars span:nth-child(5) { animation-delay: 0.5s; }
+  
+  @keyframes star-pop {
+    0% { transform: scale(0); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+  
+  .review-text {
+    color: #374151;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .author-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+  }
+  
+  .author-avatar-1 { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
+  .author-avatar-2 { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); }
+  .author-avatar-3 { background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); }
+  
+  .author-info {
+    flex: 1;
+  }
+  
+  .author-name {
+    font-weight: 700;
+    color: #1f2937;
+    font-size: 16px;
+    margin-bottom: 3px;
+  }
+  
+  .author-verified {
+    color: #9ca3af;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .verified-badge {
+    color: #10b981;
+    font-weight: 600;
+  }
+  
+  .reviews-stats {
+    margin-top: 40px;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .stat-item {
+    text-align: center;
+  }
+  
+  .stat-number {
+    font-size: 42px;
+    font-weight: 800;
+    color: #667eea;
+    display: block;
+    line-height: 1;
+  }
+  
+  .stat-label {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 8px;
+    font-weight: 600;
+  }
+</style>
+
+<div class="reviews-showcase-section">
+  <div class="reviews-container">
+    {%- if section.settings.show_title -%}
+      <h2 class="reviews-title">{{ section.settings.title }}</h2>
+    {%- endif -%}
+    
+    <div class="reviews-grid">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when 'review' -%}
+            <div class="review-card" {{ block.shopify_attributes }}>
+              <div class="review-stars">
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+                <span>★</span>
+              </div>
+              <p class="review-text">{{ block.settings.review_text }}</p>
+              <div class="review-author">
+                <div class="author-avatar author-avatar-{{ forloop.index }}">
+                  {{ block.settings.author_name | slice: 0 }}
+                </div>
+                <div class="author-info">
+                  <div class="author-name">{{ block.settings.author_name }}</div>
+                  <div class="author-verified">
+                    <span class="verified-badge">✓</span> Verified Buyer
+                  </div>
+                </div>
+              </div>
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+    
+    {%- if section.settings.show_stats -%}
+      <div class="reviews-stats">
+        <div class="stat-item">
+          <span class="stat-number">{{ section.settings.total_reviews }}</span>
+          <div class="stat-label">Total Reviews</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">4.9</span>
+          <div class="stat-label">Average Rating</div>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">{{ section.settings.happy_customers }}</span>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Product Reviews Showcase",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_title",
+      "label": "Show title",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "💬 What Our Customers Say"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#1f2937"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#a8edea"
+    },
+    {
+      "type": "header",
+      "content": "Statistics"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_stats",
+      "label": "Show statistics",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "total_reviews",
+      "label": "Total reviews",
+      "default": "2.5K+"
+    },
+    {
+      "type": "text",
+      "id": "happy_customers",
+      "label": "Happy customers",
+      "default": "10K+"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "review_text",
+          "label": "Review text",
+          "default": "Absolutely love this product! Quality is outstanding and delivery was super fast. Highly recommend!"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author name",
+          "default": "Sarah M."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Reviews Showcase",
+      "blocks": [
+        {
+          "type": "review",
+          "settings": {
+            "review_text": "Absolutely love this product! Quality is outstanding and delivery was super fast. Highly recommend!",
+            "author_name": "Sarah M."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "review_text": "Best purchase I've made this year. Exceeded all expectations. Worth every penny!",
+            "author_name": "James T."
+          }
+        },
+        {
+          "type": "review",
+          "settings": {
+            "review_text": "Fantastic quality and amazing customer service. Will definitely be ordering again!",
+            "author_name": "Emma L."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
