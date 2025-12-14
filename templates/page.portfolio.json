@@ -1,0 +1,88 @@
+{
+  "sections": {
+    "portfolio": {
+      "type": "portfolio",
+      "settings": {
+        "name": "Rachith Gattu",
+        "first_name": "Rachith",
+        "tagline": "Web Developer • Backend • Business • E-commerce",
+        "subtitle": "Computer Science @ VCU | Class of 2029",
+        "linkedin_url": "https://www.linkedin.com/in/rachithg/",
+        "instagram_url": "https://www.instagram.com/rachithgattu/",
+        "github_url": "https://github.com/RachithGattu?tab=repositories",
+        "discord_username": "bxst."
+      },
+      "blocks": {
+        "skill_java": {
+          "type": "skill",
+          "settings": {
+            "icon": "☕",
+            "name": "Java"
+          }
+        },
+        "skill_python": {
+          "type": "skill",
+          "settings": {
+            "icon": "🐍",
+            "name": "Python"
+          }
+        },
+        "skill_cpp": {
+          "type": "skill",
+          "settings": {
+            "icon": "⚙️",
+            "name": "C++"
+          }
+        },
+        "skill_matlab": {
+          "type": "skill",
+          "settings": {
+            "icon": "📊",
+            "name": "MATLAB"
+          }
+        },
+        "skill_html": {
+          "type": "skill",
+          "settings": {
+            "icon": "🌐",
+            "name": "HTML"
+          }
+        },
+        "skill_css": {
+          "type": "skill",
+          "settings": {
+            "icon": "🎨",
+            "name": "CSS"
+          }
+        },
+        "skill_js": {
+          "type": "skill",
+          "settings": {
+            "icon": "✨",
+            "name": "JavaScript"
+          }
+        },
+        "project_test": {
+          "type": "project",
+          "settings": {
+            "icon": "🚀",
+            "title": "test",
+            "description": "test",
+            "tags": "Java"
+          }
+        }
+      },
+      "block_order": [
+        "skill_java",
+        "skill_python",
+        "skill_cpp",
+        "skill_matlab",
+        "skill_html",
+        "skill_css",
+        "skill_js",
+        "project_test"
+      ]
+    }
+  },
+  "order": ["portfolio"]
+}
