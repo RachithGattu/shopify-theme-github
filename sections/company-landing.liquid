@@ -103,7 +103,8 @@
         {% if block.type == 'logo' %}
           <li {{ block.shopify_attributes }}>
             {% if block.settings.image != blank %}
-              {{ block.settings.image | image_url: width: 240 | image_tag: loading: 'lazy', alt: block.settings.alt | escape }}
+              {% assign logo_alt = block.settings.alt | escape %}
+              {{ block.settings.image | image_url: width: 240 | image_tag: loading: 'lazy', alt: logo_alt }}
             {% else %}
               {{ block.settings.text }}
             {% endif %}
