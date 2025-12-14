@@ -1,1 +1,2 @@
 # shopify-theme-github
+test
